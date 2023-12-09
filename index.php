@@ -32,11 +32,11 @@ $db = new Database();
 
 	<main>
 		<section class="hero">
-			<div class="hero_bg">
-				<img src="assets/bg.jpg">
-			</div>
-			<div class="hero_banner">
+			<img class="hero_bg" src="assets/bg.jpg">
+			<div class="hero_banner banner">
 				<h1 class="heading heading--h1">Dance Verse</h1>
+				<span class="banner_desc">Dance your heart out!</span>
+				<a class="banner_btn" href="#">See choreographies</a>
 			</div>
 		</section>
 		<?php
