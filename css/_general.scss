@@ -13,15 +13,20 @@ body {
 	max-width: 1180px;
 	width: 100%;
 	margin-inline: auto;
-	padding: 10px 20px;
+	padding-inline: 20px;
 }
 
 .heading {
 	font-family: Raleway, sans-serif;
 	color: $accent;
+	text-align: center;
 	
 	&.heading--h1 {
 		font-size: 65px;
 		color: $light;
+	}
+
+	&.heading--h2 {
+		font-size: 30px;
 	}
 }

@@ -1,0 +1,51 @@
+@import '../colors';
+
+.add-dance {
+	margin-block: 70px;
+}
+
+.add-dance__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.add-dance__form {
+	max-width: 800px;
+	width: 100%;
+	background-color: $darker;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	column-gap: 50px;
+	row-gap: 20px;
+	margin-top: 20px;
+	padding: 30px 40px;
+}
+
+.add-dance__item {
+	max-width: 300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-self: center;
+	gap: 10px;
+}
+
+.add-dance__label {
+	font-family: Raleway, sans-serif;
+	font-size: 16px;
+}
+
+.add-dance__input {
+	background-color: $dark;
+	color: $light;
+	border: 2px solid $light;
+	border-radius: 5px;
+	padding: 8px 14px;
+
+	&::placeholder {
+		color: $gray;
+	}
+}

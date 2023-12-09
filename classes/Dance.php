@@ -34,8 +34,10 @@ class Dance {
 		return "
 		<div class='dance'>
 			<iframe class='dance__video' src=''></iframe>
-			<span class='heading dance__heading'>{$this->title}</span>
-			<span class='dance__choreographer'>by {$this->choreographer}</span>
+			<div class='dance__desc'>
+				<span class='dance__heading'>{$this->title}</span>
+				<span class='dance__choreographer'>by {$this->choreographer}</span>
+			</div>
 		</div>
 		";
 	}
