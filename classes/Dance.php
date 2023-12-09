@@ -33,9 +33,9 @@ class Dance {
 	public function getHtml() {
 		return "
 		<div class='dance'>
-			<iframe class='dance_video' src=''></iframe>
-			<span class='heading dance_heading'>{$this->title}</span>
-			<span class='dance_choreographer'>by {$this->choreographer}</span>
+			<iframe class='dance__video' src=''></iframe>
+			<span class='heading dance__heading'>{$this->title}</span>
+			<span class='dance__choreographer'>by {$this->choreographer}</span>
 		</div>
 		";
 	}

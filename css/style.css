@@ -85,7 +85,7 @@ body {
   color: #f6f6f6;
 }
 
-.header_content {
+.header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,12 +105,12 @@ body {
   display: flex;
   gap: 20px;
 }
-.nav .nav_item {
+.nav .nav__item {
   color: #f6f6f6;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
 }
-.nav .nav_item:hover {
+.nav .nav__item:hover {
   color: #9B9BCF;
 }
 
@@ -122,7 +122,7 @@ body {
   background-color: rgba(17, 17, 17, 0.8);
 }
 
-.hero_bg {
+.hero__bg {
   position: relative;
   width: 100%;
   height: 100%;
@@ -143,12 +143,12 @@ body {
   gap: 15px;
 }
 
-.banner_desc {
+.banner__desc {
   font-size: 18px;
   font-family: "Raleway", sans-serif;
 }
 
-.banner_btn {
+.banner__btn {
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
@@ -168,13 +168,13 @@ body {
   border-radius: 0 0 10px 10px;
 }
 
-.dance_heading {
+.dance__heading {
   font-size: 22px;
   margin-top: 15px;
   padding-left: 15px;
 }
 
-.dance_choreographer {
+.dance__choreographer {
   margin-top: 5px;
   padding-left: 15px;
   padding-bottom: 15px;
