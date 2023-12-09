@@ -1,5 +1,21 @@
 @import 'colors';
 
 .dance {
-	background-color: $accent;
+	width: fit-content;
+	background-color: $darker;
+	display: flex;
+	flex-direction: column;
+	border-radius: 0 0 10px 10px;
+}
+
+.dance_heading {
+	font-size: 22px;
+	margin-top: 15px;
+	padding-left: 15px;
+}
+
+.dance_choreographer {
+	margin-top: 5px;
+	padding-left: 15px;
+	padding-bottom: 15px;
 }

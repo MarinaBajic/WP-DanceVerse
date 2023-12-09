@@ -1,6 +1,64 @@
 @import 'colors';
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Raleway:wght@400;700&display=swap');
+
 body {
 	background-color: $dark;
 	color: $light;
+	font-family: 'Noto Serif', serif;
+	font-size: 14px;
+}
+
+.heading {
+	font-family: Raleway, sans-serif;
+	font-weight: bold;
+}
+
+.wrapper {
+	max-width: 1180px;
+	width: 100%;
+	margin-inline: auto;
+	padding: 10px 20px;
+}
+
+.heading {
+	font-family: Raleway, sans-serif;
+	color: $accent;
+	
+	&.heading--h1 {
+		font-size: 65px;
+
+	}
+}
+
+.hero {
+	position: relative;
+
+	.hero_bg {
+		height: 350px;
+		width: 100%;
+		overflow: hidden;
+		background-color: $darker;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0.6;
+		}
+	}
+
+	.hero_banner {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+
+
+		.heading {
+			width: fit-content;
+		}
+	}
 }

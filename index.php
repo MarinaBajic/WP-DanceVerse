@@ -1,7 +1,6 @@
 <?php
 
 require_once("database/db_utils.php");
-
 $db = new Database();
 
 ?>
@@ -18,11 +17,35 @@ $db = new Database();
 
 <body>
 
-	<?php
-	foreach($db->getAllDances() as $dance) {
-		echo $dance->getHtml();
-	}
-	?>
+	<header class="header">
+		<div class="wrapper">
+			<div class="header_content">
+				<a href="." class="logo">Dance<span>Verse</span></a>
+				<nav class="nav">
+					<a href="#" class="nav_item">DANCES</a>
+					<a href="#" class="nav_item">ADD DANCE</a>
+					<a href="#" class="nav_item">SEARCH</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="hero_bg">
+				<img src="assets/bg.jpg">
+			</div>
+			<div class="hero_banner">
+				<h1 class="heading heading--h1">Dance Verse</h1>
+			</div>
+		</section>
+		<?php
+		foreach ($db->getAllDances() as $dance) {
+			echo $dance->getHtml();
+		}
+		?>
+
+	</main>
 
 </body>
 

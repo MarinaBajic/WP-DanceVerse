@@ -1,0 +1,33 @@
+@import 'colors';
+
+.header_content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-size: 28px;
+	font-weight: bold;
+	color: $light;
+	text-decoration: none;
+
+	span {
+		color: $accent;
+	}
+}
+
+.nav {
+	display: flex;
+	gap: 20px;
+
+	.nav_item {
+		color: $light;
+		text-decoration: none;
+		font-family: 'Raleway', sans-serif;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+}
