@@ -1,14 +1,28 @@
 <?php
 
-require_once("db_utils.php");
+require_once("database/db_utils.php");
 
 $db = new Database();
 
-print_r($db->getAllDances());
-echo "<br>";
+?>
 
-// $db->insertDance("test2", "desc", 2, "test2");
-$db->deleteDance(0);
-print_r($db->getAllDances());
-echo "<br>";
-`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dance Verse</title>
+</head>
+
+<body>
+
+	<?php
+	foreach($db->getAllDances() as $dance) {
+		echo $dance->getHtml();
+	}
+	?>
+
+</body>
+
+</html>
