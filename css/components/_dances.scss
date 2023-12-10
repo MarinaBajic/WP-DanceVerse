@@ -1,5 +1,9 @@
 @import '../colors';
 
+.hidden {
+	display: none;
+}
+
 .dances {
 	margin-block: 50px;
 	
@@ -12,6 +16,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 .dance {
@@ -31,12 +37,13 @@
 .dance__desc {
 	display: flex;
 	flex-direction: column;
-	padding: 15px;
+	padding: 25px;
 }
 
 .dance__heading {
-	font-size: 22px;
+	font-size: 24px;
 	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
 }
 
 .dance__choreographer {

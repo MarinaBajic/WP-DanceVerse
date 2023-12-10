@@ -50,16 +50,15 @@ class Database
 		return $result;
 	}
 
-	public function insertDance($title, $description, $difficulty, $style, $video_url, $choreographer, $duration, $music)
+	public function insertDance($title, $difficulty, $style, $video_url, $choreographer, $duration, $music)
 	{
-		$sql = "INSERT INTO " . TBL_DANCE . " (" . COL_DANCE_TITLE . ", " . COL_DANCE_DIFFICULTY . ", " . COL_DANCE_STYLE . ", " . COL_DANCE_VIDEO . ", " . COL_DANCE_CHOREOGRAPHER . ", " . COL_DANCE_DURATION . ", " . COL_DANCE_MUSIC . ") VALUES (:title, :description, :difficulty, :style, :video, :choreographer, :duration, :music);";
+		$sql = "INSERT INTO " . TBL_DANCE . " (" . COL_DANCE_TITLE . ", " . COL_DANCE_DIFFICULTY . ", " . COL_DANCE_STYLE . ", " . COL_DANCE_VIDEO . ", " . COL_DANCE_CHOREOGRAPHER . ", " . COL_DANCE_DURATION . ", " . COL_DANCE_MUSIC . ") VALUES (:title, :difficulty, :style, :video_url, :choreographer, :duration, :music);";
 		try {
 			$st = $this->conn->prepare($sql);
 			$st->bindValue(":title", $title);
-			$st->bindValue(":description", $description);
 			$st->bindValue(":difficulty", $difficulty);
 			$st->bindValue(":style", $style);
-			$st->bindValue(":video", $video_url);
+			$st->bindValue(":video_url", $video_url);
 			$st->bindValue(":choreographer", $choreographer);
 			$st->bindValue(":duration", $duration);
 			$st->bindValue(":music", $music);

@@ -82,7 +82,7 @@ body {
   text-align: center;
 }
 .heading.heading--h1 {
-  font-size: 65px;
+  font-size: 75px;
   color: #f6f6f6;
 }
 .heading.heading--h2 {
@@ -90,7 +90,10 @@ body {
 }
 
 .header {
+  width: 100%;
   margin-block: 15px;
+  position: absolute;
+  z-index: 1;
 }
 
 .header__content {
@@ -123,7 +126,7 @@ body {
 }
 
 .hero {
-  height: 500px;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
   background-color: rgba(17, 17, 17, 0.8);
@@ -161,12 +164,16 @@ body {
   font-weight: bold;
   color: #111;
   background-color: #9B9BCF;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 20px 40px;
+  border-radius: 40px;
   margin-top: 30px;
 }
 .banner__btn:hover {
   background-color: #f6f6f6;
+}
+
+.hidden {
+  display: none;
 }
 
 .dances {
@@ -180,6 +187,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .dance {
@@ -199,12 +208,13 @@ body {
 .dance__desc {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 25px;
 }
 
 .dance__heading {
-  font-size: 22px;
+  font-size: 24px;
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }
 
 .dance__choreographer {
@@ -262,4 +272,25 @@ body {
 }
 .add-dance__input::placeholder {
   color: #c3c3c3;
+}
+
+.add-dance__btn {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 300px;
+  width: 100%;
+  background-color: #9B9BCF;
+  color: #111;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  justify-self: center;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.add-dance__btn:hover {
+  background-color: #f6f6f6;
 }/*# sourceMappingURL=style.css.map */

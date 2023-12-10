@@ -2,6 +2,14 @@
 
 require_once("classes/Utils.php");
 $utils = new Utils();
+$utils->insertDance();
+
+if (isset($_GET["add-dance"])) {
+	$form_class = "add-dance";
+}
+else {
+	$form_class = "add-dance hidden";
+}
 
 ?>
 
@@ -23,7 +31,7 @@ $utils = new Utils();
 				<a href="." class="logo">Dance<span>Verse</span></a>
 				<nav class="nav">
 					<a href="#dances" class="nav__item">DANCES</a>
-					<a href="#add-dance" class="nav__item">ADD DANCE</a>
+					<a href="?add-dance#add-dance" class="nav__item">ADD DANCE</a>
 					<a href="#" class="nav__item">SEARCH</a>
 				</nav>
 			</div>
@@ -47,7 +55,7 @@ $utils = new Utils();
 				</div>
 			</div>
 		</section>
-		<section id="add-dance" class="add-dance">
+		<section id="add-dance" class="<?php echo $form_class; ?>">
 			<div class="wrapper">
 				<div class="add-dance__content">
 					<h2 class="heading heading--h2">Add new dance</h2>
@@ -87,12 +95,15 @@ $utils = new Utils();
 							<label for="duration" class="add-dance__label">Duration</label>
 							<input class="add-dance__input" id="duration" type="time" name="duration" step="1">
 						</div>
+						<input class="add-dance__btn" type="submit" value="Add new dance" name="add-dance">
 					</form>
 				</div>
 			</div>
 		</section>
 
 	</main>
+
+	<?php echo $utils->getMessage(); ?>
 
 </body>
 
