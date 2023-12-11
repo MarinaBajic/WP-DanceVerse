@@ -89,6 +89,11 @@ body {
   font-size: 30px;
 }
 
+.message {
+  font-size: 30px;
+  color: red;
+}
+
 .header {
   width: 100%;
   padding-block: 25px;
@@ -304,6 +309,67 @@ body {
   cursor: pointer;
 }
 .add-dance__btn:hover {
+  background-color: #f6f6f6;
+}
+
+.details {
+  height: calc(100dvh - 120px);
+  padding-top: 200px;
+  background-image: url("../assets/polygon-scatter-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.details__content {
+  width: 100%;
+  font-family: Raleway, sans-serif;
+  display: grid;
+  grid-template-columns: 55% 40%;
+  row-gap: 30px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.details__video {
+  width: 100%;
+  height: 100%;
+  grid-row: span 6;
+}
+
+.details__heading {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.details__item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.details__subheading {
+  font-size: 15px;
+  color: #c3c3c3;
+}
+
+.details__desc {
+  font-size: 17px;
+}
+
+.details__btn {
+  width: 100%;
+  font-weight: bold;
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  background-color: #9B9BCF;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.details__btn:hover {
   background-color: #f6f6f6;
 }
 

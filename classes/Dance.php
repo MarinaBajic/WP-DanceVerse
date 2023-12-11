@@ -70,22 +70,22 @@ class Dance {
 		return "
 		<iframe class='details__video' src= '{$this->video_url}' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
 		<span class='details__heading'>{$this->title}</span>
-		<span class='details__difficulty'>Difficulty level: {$this->difficulty}/10</span>
+		<span class='details__desc'>Difficulty level: {$this->difficulty}/10</span>
 		<div class='details__item'>
 			<span class='details__subheading'>Choreographer</span>
-			<span class='details__choreographer'>{$this->choreographer}</span>
+			<span class='details__desc'>{$this->choreographer}</span>
 		</div>
 		<div class='details__item'>
 			<span class='details__subheading'>Dance Style</span>
-			<span class='details__style'>{$this->style}</span>
+			<span class='details__desc'>{$this->style}</span>
 		</div>
 		<div class='details__item'>
 			<span class='details__subheading'>Duration</span>
-			<span class='details__duration'>{$this->duration}</span>
+			<span class='details__desc'>{$this->duration}</span>
 		</div>
 		<div class='details__item'>
 			<span class='details__subheading'>Music</span>
-			<span class='details__music'>{$this->music}</span>
+			<span class='details__desc'>{$this->music}</span>
 		</div>
 		";
 	}

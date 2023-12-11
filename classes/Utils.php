@@ -6,13 +6,11 @@ class Utils
 {
 
 	private $db;
-	private $message;
 	private $styles;
 
 	public function __construct()
 	{
 		$this->db = new Database();
-		$this->message = "";
 		$this->styles = array("Ballet", "Hip Hop", "Salsa", "Tango", "Bollywood", "Contemporary", "Ballroom", "Kathak", "Flamenco", "Krump");
 	}
 
@@ -24,21 +22,6 @@ class Utils
 	public function getStyles()
 	{
 		return $this->styles;
-	}
-
-	public function getMessage()
-	{
-		if ($this->message != "") {
-			return "
-			<script type='text/javascript'>
-				window.onload = function () { alert({$this->message}); } 
-			</script>";
-		}
-	}
-
-	public function setMessage($message)
-	{
-		$this->message = $message;
 	}
 
 	public function printAllDances()
@@ -60,6 +43,7 @@ class Utils
 
 	public function insertDance()
 	{
+		$message = "";
 		if (isset($_POST["add-dance"])) {
 			$title = htmlspecialchars($_POST["title"]);
 			$difficulty = htmlspecialchars($_POST["difficulty"]);
@@ -69,12 +53,28 @@ class Utils
 			$duration = htmlspecialchars($_POST["duration"]);
 			$music = htmlspecialchars($_POST["music"]);
 			if ($this->db->insertDance($title, $difficulty, $style, $video_url, $choreographer, $duration, $music)) {
-				$this->setMessage("Insert successful :D");
+				$message .= "Insert successful :D";
 			} else {
-				$this->setMessage("Insert unsuccessful :(");
+				$message .= "Insert unsuccessful :(";
 			}
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
+		return $message;
+	}
+
+	public function deleteDance()
+	{
+		$message = "";
+		if (isset($_POST["delete"])) {
+			$dance_id = htmlspecialchars($_POST["dance-id"]);
+			if ($this->db->deleteDance($dance_id)) {
+				$message .= "Delete successful :D";
+			} else {
+				$message .= "Delete unsuccessful :(";
+			}
+			header('Location: index.php');
+		}
+		return $message;
 	}
 
 	public static function toggleAddDanceVisibility() {

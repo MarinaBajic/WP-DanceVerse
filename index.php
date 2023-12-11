@@ -41,7 +41,7 @@ $form_class = Utils::toggleAddDanceVisibility();
 			<div class="wrapper">
 				<div class="add-dance__content">
 					<h2 class="heading heading--h2">Add new dance</h2>
-					<form class="add-dance__form" action="" method="post">
+					<form class="add-dance__form" method="post">
 						<div class="add-dance__item">
 							<label for="title" class="add-dance__label">Title</label>
 							<input class="add-dance__input" id="title" type="text" name="title" placeholder="Best Dance Ever">
@@ -84,7 +84,6 @@ $form_class = Utils::toggleAddDanceVisibility();
 		</section>
 	</main>
 
-	<!-- <?php echo $utils->getMessage(); ?> -->
 	<?php include("footer.html"); ?>
 
 </body>

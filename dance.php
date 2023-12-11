@@ -2,6 +2,7 @@
 
 require_once("classes/Utils.php");
 $utils = new Utils();
+$utils->deleteDance();
 
 $dance = null;
 if (isset($_GET["id"])) {
@@ -16,7 +17,7 @@ if (isset($_GET["id"])) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $dance->getTitle(); ?></title>
+	<title>DanceVerse | <?php echo $dance->getTitle(); ?></title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -26,7 +27,15 @@ if (isset($_GET["id"])) {
 
 	<main class="main">
 		<section class="details">
-			<?php echo $dance->getHtmlDetails(); ?>
+			<div class="wrapper">
+				<div class="details__content">
+					<?php echo $dance->getHtmlDetails(); ?>
+					<form method="post">
+						<input type="hidden" name="dance-id" value="<?php echo $dance->getId(); ?>">
+						<input class="details__btn" type="submit" name="delete" value="Delete choreography">
+					</form>
+				</div>
+			</div>
 		</section>
 	</main>
 
