@@ -25,18 +25,7 @@ else {
 
 <body>
 
-	<header class="header">
-		<div class="wrapper">
-			<div class="header__content">
-				<a href="." class="logo">Dance<span>Verse</span></a>
-				<nav class="nav">
-					<a href=".#dances" class="nav__item">DANCES</a>
-					<a href="?add-dance#add-dance" class="nav__item">ADD DANCE</a>
-					<a href=".#" class="nav__item">SEARCH</a>
-				</nav>
-			</div>
-		</div>
-	</header>
+	<?php include("header.html"); ?>
 
 	<main class="main">
 		<section class="hero">
@@ -100,10 +89,10 @@ else {
 				</div>
 			</div>
 		</section>
-
 	</main>
 
-	<?php echo $utils->getMessage(); ?>
+	<!-- <?php echo $utils->getMessage(); ?> -->
+	<?php include("footer.html"); ?>
 
 </body>
 

@@ -163,6 +163,7 @@ body {
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
+  font-size: 15px;
   color: #111;
   background-color: #9B9BCF;
   padding: 20px 40px;
@@ -307,4 +308,22 @@ body {
 }
 .add-dance__btn:hover {
   background-color: #f6f6f6;
+}
+
+.footer {
+  background-color: #111;
+  padding-block: 30px 20px;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
 }/*# sourceMappingURL=style.css.map */
