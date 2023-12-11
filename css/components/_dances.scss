@@ -1,11 +1,10 @@
 @import '../colors';
 
-.hidden {
-	display: none;
-}
-
 .dances {
-	margin-block: 50px;
+	padding-block: 100px;
+	background-image: url("../assets/polygon-scatter-haikei.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	
 	.heading {
 		margin-bottom: 40px;
@@ -26,12 +25,21 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: 0 0 10px 10px;
-	cursor: pointer;
+	box-shadow: 4px 2px 4px 0 rgba(0, 0, 0, 0.08);
 
 	&:hover {
 		background-color: $accent;
 		color: $black;
+
+		a {
+			color: $black;
+		}
 	}
+}
+
+.dance__video {
+	height: 190px;
+	width: 350px;
 }
 
 .dance__desc {
@@ -44,6 +52,11 @@
 	font-size: 24px;
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
+
+	a {
+		text-decoration: none;
+		color: $light;
+	}
 }
 
 .dance__choreographer {

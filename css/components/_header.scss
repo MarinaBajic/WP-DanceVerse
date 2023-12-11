@@ -2,9 +2,10 @@
 
 .header {
 	width: 100%;
-	margin-block: 15px;
-	position: absolute;
+	padding-block: 25px;
+	position: fixed;
 	z-index: 1;
+	background-color: rgba($black, 0.7);
 }
 
 .header__content {

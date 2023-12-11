@@ -30,9 +30,9 @@ else {
 			<div class="header__content">
 				<a href="." class="logo">Dance<span>Verse</span></a>
 				<nav class="nav">
-					<a href="#dances" class="nav__item">DANCES</a>
+					<a href=".#dances" class="nav__item">DANCES</a>
 					<a href="?add-dance#add-dance" class="nav__item">ADD DANCE</a>
-					<a href="#" class="nav__item">SEARCH</a>
+					<a href=".#" class="nav__item">SEARCH</a>
 				</nav>
 			</div>
 		</div>
@@ -44,12 +44,12 @@ else {
 			<div class="hero__banner banner">
 				<h1 class="heading heading--h1">Dance Verse</h1>
 				<span class="banner__desc">Dance your heart out!</span>
-				<a class="banner__btn" href="#dances">See choreographies</a>
+				<a class="banner__btn" href=".#dances">See choreographies</a>
 			</div>
 		</section>
 		<section id="dances" class="dances">
 			<div class="wrapper">
-				<h2 class="heading heading--h2">Choreographies</h2>
+				<!-- <h2 class="heading heading--h2">Choreographies</h2> -->
 				<div class="dances__content">
 					<?php $utils->printAllDances(); ?>
 				</div>
