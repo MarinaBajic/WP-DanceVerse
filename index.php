@@ -3,13 +3,7 @@
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->insertDance();
-
-if (isset($_GET["add-dance"])) {
-	$form_class = "add-dance";
-}
-else {
-	$form_class = "add-dance hidden";
-}
+$form_class = Utils::toggleAddDanceVisibility();
 
 ?>
 
@@ -38,7 +32,6 @@ else {
 		</section>
 		<section id="dances" class="dances">
 			<div class="wrapper">
-				<!-- <h2 class="heading heading--h2">Choreographies</h2> -->
 				<div class="dances__content">
 					<?php $utils->printAllDances(); ?>
 				</div>

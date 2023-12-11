@@ -180,9 +180,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.dances .heading {
-  margin-bottom: 40px;
-}
 
 .dances__content {
   display: flex;

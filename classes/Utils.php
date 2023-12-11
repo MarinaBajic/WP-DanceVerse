@@ -1,6 +1,6 @@
 <?php
 
-require_once("database/db_utils.php");
+require_once("database/Database.php");
 
 class Utils
 {
@@ -16,15 +16,18 @@ class Utils
 		$this->styles = array("Ballet", "Hip Hop", "Salsa", "Tango", "Bollywood", "Contemporary", "Ballroom", "Kathak", "Flamenco", "Krump");
 	}
 
-	public function getDatabase() {
+	public function getDatabase()
+	{
 		return $this->db;
 	}
 
-	public function getStyles() {
+	public function getStyles()
+	{
 		return $this->styles;
 	}
 
-	public function getMessage() {
+	public function getMessage()
+	{
 		if ($this->message != "") {
 			return "
 			<script type='text/javascript'>
@@ -33,7 +36,8 @@ class Utils
 		}
 	}
 
-	public function setMessage($message) {
+	public function setMessage($message)
+	{
 		$this->message = $message;
 	}
 
@@ -44,7 +48,18 @@ class Utils
 		}
 	}
 
-	public function insertDance() {
+	public function findDanceById($id)
+	{
+		foreach ($this->db->getAllDances() as $dance) {
+			if ($dance->getId() == $id) {
+				return $dance;
+			}
+		}
+		return null;
+	}
+
+	public function insertDance()
+	{
 		if (isset($_POST["add-dance"])) {
 			$title = htmlspecialchars($_POST["title"]);
 			$difficulty = htmlspecialchars($_POST["difficulty"]);
@@ -60,6 +75,14 @@ class Utils
 			}
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
+	}
+
+	public static function toggleAddDanceVisibility() {
+		$form_class = "add-dance";
+		if (!isset($_GET["add-dance"])) {
+			$form_class .= " hidden";
+		}
+		return $form_class;
 	}
 
 }
