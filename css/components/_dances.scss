@@ -5,7 +5,42 @@
 	background-size: cover;
 }
 
-.dances__content {
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-family: Raleway, sans-serif;
+	margin-bottom: 50px;
+
+	.search__label {
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.search__input {
+		width: 250px;
+		background-color: $light;
+		padding: 10px 15px;
+		border: 2px solid $gray;
+		border-radius: 50px;
+	}
+
+	.search__btn {
+		font-weight: bold;
+		background-color: $accent;
+		padding: 10px 25px;
+		border: 0;
+		border-radius: 50px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $light;
+		}
+	}
+}
+
+.dances__print {
 	display: flex;
 	align-items: center;
 	justify-content: center;

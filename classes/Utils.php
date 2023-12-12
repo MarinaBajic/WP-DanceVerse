@@ -77,12 +77,11 @@ class Utils
 		return $message;
 	}
 
-	public static function toggleAddDanceVisibility() {
-		$form_class = "add-dance";
-		if (!isset($_GET["add-dance"])) {
-			$form_class .= " hidden";
+	public static function toggleComponentVisibility($base_class) {
+		if (!isset($_GET["$base_class"])) {
+			$base_class .= " hidden";
 		}
-		return $form_class;
+		return $base_class;
 	}
 
 }

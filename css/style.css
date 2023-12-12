@@ -186,7 +186,38 @@ body {
   background-size: cover;
 }
 
-.dances__content {
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Raleway, sans-serif;
+  margin-bottom: 50px;
+}
+.search .search__label {
+  font-size: 16px;
+  font-weight: bold;
+}
+.search .search__input {
+  width: 250px;
+  background-color: #f6f6f6;
+  padding: 10px 15px;
+  border: 2px solid #c3c3c3;
+  border-radius: 50px;
+}
+.search .search__btn {
+  font-weight: bold;
+  background-color: #9B9BCF;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.search .search__btn:hover {
+  background-color: #f6f6f6;
+}
+
+.dances__print {
   display: flex;
   align-items: center;
   justify-content: center;

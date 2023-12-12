@@ -3,7 +3,8 @@
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->insertDance();
-$form_class = Utils::toggleAddDanceVisibility();
+$add_form_class = Utils::toggleComponentVisibility("add-dance");
+$search_form_class = Utils::toggleComponentVisibility("search");
 
 ?>
 
@@ -33,11 +34,25 @@ $form_class = Utils::toggleAddDanceVisibility();
 		<section id="dances" class="dances">
 			<div class="wrapper">
 				<div class="dances__content">
-					<?php $utils->printAllDances(); ?>
+					<form id="search" class="dances__search <?php echo $search_form_class; ?>" method="post">
+						<label class="search__label" for="search">Search by style:</label>
+						<select class="search__input" name="search" id="search">
+							<option value="All">--all--</option>
+							<?php
+							foreach($utils->getStyles() as $style) {
+								echo "<option value='$style'>$style</option>";
+							}
+							?>
+						</select>
+						<input class="search__btn" type="submit" value="Search">
+					</form>
+					<div class="dances__print">
+						<?php $utils->printAllDances(); ?>
+					</div>
 				</div>
 			</div>
 		</section>
-		<section id="add-dance" class="<?php echo $form_class; ?>">
+		<section id="add-dance" class="<?php echo $add_form_class; ?>">
 			<div class="wrapper">
 				<div class="add-dance__content">
 					<h2 class="heading heading--h2">Add new dance</h2>
