@@ -50,6 +50,21 @@ class Database
 		return $result;
 	}
 
+	public function insertUser($username, $password)
+	{
+		$sql = "INSERT INTO " . TBL_USER . " (" . COL_USER_USERNAME . ", " . COL_USER_PASSWORD . ") VALUES (:username, :password);";
+		try {
+			$st = $this->conn->prepare($sql);
+			$st->bindValue(":username", $username);
+			$st->bindValue(":password", $password);
+			$st->execute();
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+			return false;
+		}
+		return true;
+	}
+
 	public function insertDance($title, $difficulty, $style, $video_url, $choreographer, $duration, $music)
 	{
 		$sql = "INSERT INTO " . TBL_DANCE . " (" . COL_DANCE_TITLE . ", " . COL_DANCE_DIFFICULTY . ", " . COL_DANCE_STYLE . ", " . COL_DANCE_VIDEO . ", " . COL_DANCE_CHOREOGRAPHER . ", " . COL_DANCE_DURATION . ", " . COL_DANCE_MUSIC . ") VALUES (:title, :difficulty, :style, :video_url, :choreographer, :duration, :music);";

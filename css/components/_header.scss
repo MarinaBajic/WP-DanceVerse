@@ -25,6 +25,7 @@
 
 .nav {
 	display: flex;
+	align-items: center;
 	gap: 20px;
 
 	.nav__item {
@@ -35,5 +36,23 @@
 		&:hover {
 			color: $accent;
 		}
+	}
+}
+
+.log-btn {
+	color: $accent;
+	text-decoration: none;
+	background-color: transparent;
+	font-family: Raleway, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	border: 2px solid $accent;
+	border-radius: 50px;
+	padding: 7px 14px;
+
+	&:hover {
+		background-color: $accent;
+		color: $black;
+		cursor: pointer;
 	}
 }

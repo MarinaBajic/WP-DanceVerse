@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once("database/Database.php");
 
 class Utils
@@ -32,6 +34,22 @@ class Utils
 			}
 		}
 		return null;
+	}
+
+	public function insertUser()
+	{
+		$message = "";
+		if (isset($_POST["register"])) {
+			$username = htmlspecialchars($_POST["username"]);
+			$password = password_hash(htmlspecialchars($_POST["password"]), PASSWORD_DEFAULT);
+			if ($this->db->insertUser($username, $password)) {
+				$message .= "Insert successful :D";
+			} else {
+				$message .= "Insert unsuccessful :(";
+			}
+			header('Location: ' . $_SERVER['PHP_SELF']);
+		}
+		return $message;
 	}
 
 	public function insertDance()
@@ -106,6 +124,24 @@ class Utils
 			$base_class .= " hidden";
 		}
 		return $base_class;
+	}
+
+	public function login() {
+		if (isset($_POST["login"])) {
+			if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+				$_SESSION["username"] = htmlspecialchars($_POST["username"]);
+				$_SESSION["password"] = htmlspecialchars($_POST["password"]);
+			
+				header("Location: index.php");
+			}
+		}
+	}
+
+	public function logout() {
+		if (isset($_POST["logout"])) {
+			session_destroy();
+			header("Location: index.php");
+		}
 	}
 
 }

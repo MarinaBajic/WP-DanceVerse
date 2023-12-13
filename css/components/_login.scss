@@ -1,0 +1,36 @@
+.login {
+	min-height: calc(100dvh - 120px);
+	padding-block: 180px 100px;
+	background-image: url("../assets/polygon-scatter-haikei.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.login__form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
+	margin-inline: auto;
+	margin-bottom: 30px;
+}
+
+.login__footer {
+	font-family: Raleway, sans-serif;
+	display: block;
+	width: fit-content;
+	margin-inline: auto;
+
+	a {
+		color: $accent;
+
+		&:hover {
+			color: $light;
+		}
+	}
+}
+
+.register {
+	background-color: $darker;
+	padding-block: 80px;
+}
