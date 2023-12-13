@@ -233,6 +233,7 @@ body {
   flex-direction: column;
   border-radius: 0 0 10px 10px;
   box-shadow: 4px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  transition: background-color 500ms;
 }
 .dance:hover {
   background-color: #9B9BCF;
@@ -282,9 +283,12 @@ body {
   align-items: center;
 }
 
-.add-dance__form {
+.form {
   max-width: 800px;
   width: 100%;
+}
+
+.add-dance__form {
   display: grid;
   grid-template-columns: repeat(2, auto);
   -moz-column-gap: 50px;
@@ -293,7 +297,7 @@ body {
   margin-top: 40px;
 }
 
-.add-dance__item {
+.form__item {
   max-width: 300px;
   width: 100%;
   display: flex;
@@ -303,26 +307,26 @@ body {
   gap: 10px;
 }
 
-.add-dance__label {
+.form__label {
   font-family: Raleway, sans-serif;
   font-size: 16px;
 }
 
-.add-dance__input {
+.form__input {
   background-color: #003c3c;
   color: #f6f6f6;
   border: 2px solid #f6f6f6;
   border-radius: 5px;
   padding: 8px 14px;
 }
-.add-dance__input::-moz-placeholder {
+.form__input::-moz-placeholder {
   color: #c3c3c3;
 }
-.add-dance__input::placeholder {
+.form__input::placeholder {
   color: #c3c3c3;
 }
 
-.add-dance__btn {
+.form__btn {
   height: -moz-fit-content;
   height: fit-content;
   max-width: 300px;
@@ -339,7 +343,7 @@ body {
   align-self: flex-end;
   cursor: pointer;
 }
-.add-dance__btn:hover {
+.form__btn:hover {
   background-color: #f6f6f6;
 }
 

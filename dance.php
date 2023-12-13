@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->deleteDance();

@@ -24,13 +24,6 @@ class Utils
 		return $this->styles;
 	}
 
-	public function printAllDances()
-	{
-		foreach ($this->db->getAllDances() as $dance) {
-			echo $dance->getHtml();
-		}
-	}
-
 	public function findDanceById($id)
 	{
 		foreach ($this->db->getAllDances() as $dance) {
@@ -75,6 +68,37 @@ class Utils
 			header('Location: index.php');
 		}
 		return $message;
+	}
+
+	public function printAllDances()
+	{
+		foreach ($this->db->getAllDances() as $dance) {
+			echo $dance->getHtml();
+		}
+	}
+
+	public function filterByStyle() {
+		if (isset($_GET["search"])) {
+			$style = htmlspecialchars($_GET["style"]);
+			if ($style == "All") {
+				$this->printAllDances();
+				return;
+			}
+			foreach ($this->db->getAllDances() as $dance) {
+				if ($dance->getStyle() == $style) {
+					echo $dance->getHtml();
+				}
+			}
+		}
+	}
+
+	public function printDances() {
+		if (!empty($_GET["search"])) {
+			$this->filterByStyle();
+		}
+		else {
+			$this->printAllDances();
+		}	
 	}
 
 	public static function toggleComponentVisibility($base_class) {

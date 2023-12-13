@@ -55,6 +55,7 @@
 	flex-direction: column;
 	border-radius: 0 0 10px 10px;
 	box-shadow: 4px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	transition: background-color 500ms;
 
 	&:hover {
 		background-color: $accent;
