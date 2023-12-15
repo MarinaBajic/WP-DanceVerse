@@ -143,7 +143,6 @@ class Utils
 		foreach ($this->db->getAllUsers() as $user) {
 			if ($username == $user->getUsername() && password_verify($password, $user->getPassword())) {
 				$_SESSION["username"] = $username;
-				$_SESSION["password"] = $password;
 				$message = "Login successful!";
 				header("Location: index.php");
 				return;
@@ -152,11 +151,18 @@ class Utils
 		$message = "Invalid credentials.";
 	}
 
-	public function logout()
+	public static function logout()
 	{
 		if (isset($_POST["logout"])) {
 			session_destroy();
 			header("Location: index.php");
 		}
+	}
+
+	public static function isUserLoggedIn() {
+		if (empty($_SESSION["username"])) {
+			return false;
+		}
+		return true;
 	}
 }

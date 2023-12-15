@@ -3,8 +3,12 @@
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->insertDance();
-$add_form_class = Utils::toggleComponentVisibility("add-dance");
+$add_form_class = " hidden";
+if (Utils::isUserLoggedIn() && isset($_GET["add-dance"])) {
+	$add_form_class = "";
+}
 $search_form_class = Utils::toggleComponentVisibility("search");
+Utils::logout();
 
 ?>
 
@@ -20,7 +24,7 @@ $search_form_class = Utils::toggleComponentVisibility("search");
 
 <body>
 
-	<?php include("header.html"); ?>
+	<?php include("header.php"); ?>
 
 	<main class="main">
 		<section class="hero">
@@ -53,7 +57,7 @@ $search_form_class = Utils::toggleComponentVisibility("search");
 				</div>
 			</div>
 		</section>
-		<section id="add-dance" class="<?php echo $add_form_class; ?>">
+		<section id="add-dance" class="add-dance <?php echo $add_form_class; ?>">
 			<div class="wrapper">
 				<div class="add-dance__content">
 					<h2 class="heading heading--h2">Add new dance</h2>

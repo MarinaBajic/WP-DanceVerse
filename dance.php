@@ -23,7 +23,7 @@ if (isset($_GET["id"])) {
 
 <body>
 
-	<?php include("header.html"); ?>
+	<?php include("header.php"); ?>
 
 	<main class="main">
 		<section class="details">
