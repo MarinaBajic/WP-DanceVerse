@@ -3,11 +3,17 @@
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->deleteDance();
+$dance_delete_class = "hidden";
+if (Utils::isUserLoggedIn()) {
+	$dance_delete_class = "";
+}
 
 $dance = null;
 if (isset($_GET["id"])) {
 	$dance = $utils->findDanceById($_GET["id"]);
 }
+
+Utils::logout();
 
 ?>
 
@@ -30,7 +36,7 @@ if (isset($_GET["id"])) {
 			<div class="wrapper">
 				<div class="details__content">
 					<?php echo $dance->getHtmlDetails(); ?>
-					<form method="post">
+					<form method="post" class="<?php echo $dance_delete_class; ?>">
 						<input type="hidden" name="dance-id" value="<?php echo $dance->getId(); ?>">
 						<input class="details__btn" type="submit" name="delete" value="Delete choreography">
 					</form>

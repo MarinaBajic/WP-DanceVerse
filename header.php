@@ -10,12 +10,7 @@ if (Utils::isUserLoggedIn()) {
 	$login_btn_class .= " hidden";
 	$logout_btn_class = "";
 	$add_dance_btn_class = "";
-} else {
-	$login_btn_class = "log__btn";
-	$logout_btn_class = "hidden";
-	$add_dance_btn_class = "hidden";
 }
-
 
 ?>
 
