@@ -39,15 +39,22 @@ class Utils
 	public function insertUser()
 	{
 		$message = "";
-		if (isset($_POST["register"])) {
+		if (!isset($_POST["register"])) {
+			return $message;
+		}
+		if (empty($_POST["username"])) {
+			$message = "Please enter a username.";
+		} else if (empty($_POST["password"])) {
+			$message = "Please enter a password.";
+		} else {
 			$username = htmlspecialchars($_POST["username"]);
 			$password = password_hash(htmlspecialchars($_POST["password"]), PASSWORD_DEFAULT);
 			if ($this->db->insertUser($username, $password)) {
 				$message .= "Insert successful :D";
+				header('Location: ' . $_SERVER['PHP_SELF']);
 			} else {
 				$message .= "Insert unsuccessful :(";
 			}
-			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 		return $message;
 	}
@@ -55,7 +62,20 @@ class Utils
 	public function insertDance()
 	{
 		$message = "";
-		if (isset($_POST["add-dance"])) {
+		if (!isset($_POST["add-dance"])) {
+			return $message;
+		}
+		if (empty($_POST["title"])) {
+			$message = "Please enter a title.";
+		} else if (empty($_POST["difficulty"])) {
+			$message = "Please enter difficulty.";
+		} else if (empty($_POST["style"])) {
+			$message = "Please select a dance style.";
+		} else if (empty($_POST["video_url"])) {
+			$message = "Please enter video url.";
+		} else if (empty($_POST["choreographer"])) {
+			$message = "Please enter a choreographer.";
+		} else {
 			$title = htmlspecialchars($_POST["title"]);
 			$difficulty = htmlspecialchars($_POST["difficulty"]);
 			$style = htmlspecialchars($_POST["style"]);
@@ -65,10 +85,10 @@ class Utils
 			$music = htmlspecialchars($_POST["music"]);
 			if ($this->db->insertDance($title, $difficulty, $style, $video_url, $choreographer, $duration, $music)) {
 				$message .= "Insert successful :D";
+				header('Location: ' . $_SERVER['PHP_SELF']);
 			} else {
 				$message .= "Insert unsuccessful :(";
 			}
-			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 		return $message;
 	}
@@ -134,7 +154,7 @@ class Utils
 		if (!isset($_POST["login"])) return;
 		if (empty($_POST["username"]) || empty($_POST["password"])) {
 			$message = "Please enter username AND password.";
-			return;
+			return $message;
 		}
 
 		$username = htmlspecialchars($_POST["username"]);
@@ -145,10 +165,11 @@ class Utils
 				$_SESSION["username"] = $username;
 				$message = "Login successful!";
 				header("Location: index.php");
-				return;
+				return $message;
 			}
 		}
 		$message = "Invalid credentials.";
+		return $message;
 	}
 
 	public static function logout()
@@ -159,7 +180,8 @@ class Utils
 		}
 	}
 
-	public static function isUserLoggedIn() {
+	public static function isUserLoggedIn()
+	{
 		if (empty($_SESSION["username"])) {
 			return false;
 		}

@@ -2,7 +2,7 @@
 
 require_once("classes/Utils.php");
 $utils = new Utils();
-$utils->insertDance();
+$message_insert_dance = $utils->insertDance();
 $add_form_class = " hidden";
 if (Utils::isUserLoggedIn() && isset($_GET["add-dance"])) {
 	$add_form_class = "";
@@ -99,6 +99,7 @@ Utils::logout();
 						</div>
 						<input class="form__btn" type="submit" value="Add new dance" name="add-dance">
 					</form>
+					<span class="message"><?php echo $message_insert_dance; ?></span>
 				</div>
 			</div>
 		</section>

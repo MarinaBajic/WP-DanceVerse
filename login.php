@@ -2,8 +2,8 @@
 
 require_once("classes/Utils.php");
 $utils = new Utils();
-$utils->login();
-$utils->insertUser();
+$message_login = $utils->login();
+$message_register = $utils->insertUser();
 $register_class = Utils::toggleComponentVisibility("register");
 
 ?>
@@ -39,6 +39,7 @@ $register_class = Utils::toggleComponentVisibility("register");
 						<input type="submit" value="Log in" name="login" class="form__btn">
 					</form>
 					<span class="login__footer">Don't have an account? <a href="login.php?register#register">Register here.</a></span>
+					<span class="message"><?php echo $message_login; ?></span>
 				</div>
 			</div>
 		</section>
@@ -56,6 +57,7 @@ $register_class = Utils::toggleComponentVisibility("register");
 							<input type="password" id="password" class="form__input" name="password">
 						</div>
 						<input type="submit" value="Register" name="register" class="form__btn">
+						<span class="message"><?php echo $message_register; ?></span>
 					</form>
 				</div>
 			</div>
