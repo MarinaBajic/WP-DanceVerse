@@ -12,5 +12,6 @@ define('COL_DANCE_CHOREOGRAPHER', 'choreographer');
 define('COL_DANCE_DURATION', 'duration');
 define('COL_DANCE_MUSIC', 'music');
 
+define('COL_USER_ID', 'id_user');
 define('COL_USER_USERNAME', 'username');
 define('COL_USER_PASSWORD', 'password');

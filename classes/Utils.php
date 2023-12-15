@@ -95,7 +95,8 @@ class Utils
 		}
 	}
 
-	public function filterByStyle() {
+	public function filterByStyle()
+	{
 		if (isset($_GET["search"])) {
 			$style = htmlspecialchars($_GET["style"]);
 			if ($style == "All") {
@@ -110,38 +111,52 @@ class Utils
 		}
 	}
 
-	public function printDances() {
+	public function printDances()
+	{
 		if (!empty($_GET["search"])) {
 			$this->filterByStyle();
-		}
-		else {
+		} else {
 			$this->printAllDances();
-		}	
+		}
 	}
 
-	public static function toggleComponentVisibility($base_class) {
+	public static function toggleComponentVisibility($base_class)
+	{
 		if (!isset($_GET["$base_class"])) {
 			$base_class .= " hidden";
 		}
 		return $base_class;
 	}
 
-	public function login() {
-		if (isset($_POST["login"])) {
-			if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-				$_SESSION["username"] = htmlspecialchars($_POST["username"]);
-				$_SESSION["password"] = htmlspecialchars($_POST["password"]);
-			
+	public function login()
+	{
+		$message = "";
+		if (!isset($_POST["login"])) return;
+		if (empty($_POST["username"]) || empty($_POST["password"])) {
+			$message = "Please enter username AND password.";
+			return;
+		}
+
+		$username = htmlspecialchars($_POST["username"]);
+		$password = htmlspecialchars($_POST["password"]);
+
+		foreach ($this->db->getAllUsers() as $user) {
+			if ($username == $user->getUsername() && password_verify($password, $user->getPassword())) {
+				$_SESSION["username"] = $username;
+				$_SESSION["password"] = $password;
+				$message = "Login successful!";
 				header("Location: index.php");
+				return;
 			}
 		}
+		$message = "Invalid credentials.";
 	}
 
-	public function logout() {
+	public function logout()
+	{
 		if (isset($_POST["logout"])) {
 			session_destroy();
 			header("Location: index.php");
 		}
 	}
-
 }

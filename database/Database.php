@@ -2,6 +2,7 @@
 
 require_once("constants.php");
 require_once("classes/Dance.php");
+require_once("classes/User.php");
 
 class Database
 {
@@ -24,6 +25,25 @@ class Database
 	public function __destruct()
 	{
 		$this->conn = null;
+	}
+
+	public function getAllUsers()
+	{
+		$result = array();
+		$sql = "SELECT * FROM " . TBL_USER;
+		try {
+			$query_result = $this->conn->query($sql);
+			foreach ($query_result as $query) {
+				$result[] = new User(
+					$query[COL_USER_ID],
+					$query[COL_USER_USERNAME],
+					$query[COL_USER_PASSWORD]
+				);
+			}
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+		return $result;
 	}
 
 	public function getAllDances()
@@ -98,4 +118,5 @@ class Database
 		}
 		return true;
 	}
+
 }

@@ -1,6 +1,7 @@
 <?php
 
-class Dance {
+class Dance
+{
 	private $id;
 	private $title;
 	private $difficulty;
@@ -22,39 +23,48 @@ class Dance {
 		$this->music = $music;
 	}
 
-	public function getId() {
+	public function getId()
+	{
 		return $this->id;
 	}
 
-	public function getTitle() {
+	public function getTitle()
+	{
 		return $this->title;
 	}
 
-	public function getDifficulty() {
+	public function getDifficulty()
+	{
 		return $this->difficulty;
 	}
 
-	public function getStyle() {
+	public function getStyle()
+	{
 		return $this->style;
 	}
 
-	public function getVideoUrl() {
+	public function getVideoUrl()
+	{
 		return $this->video_url;
 	}
 
-	public function getChoreographer() {
+	public function getChoreographer()
+	{
 		return $this->choreographer;
 	}
 
-	public function getDuration() {
+	public function getDuration()
+	{
 		return $this->duration;
 	}
 
-	public function getMusic() {
+	public function getMusic()
+	{
 		return $this->music;
 	}
 
-	public function getHtml() {
+	public function getHtml()
+	{
 		return "
 		<div class='dance'>
 			<iframe class='dance__video' src= '{$this->video_url}' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
@@ -66,7 +76,8 @@ class Dance {
 		";
 	}
 
-	public function getHtmlDetails() {
+	public function getHtmlDetails()
+	{
 		return "
 		<iframe class='details__video' src= '{$this->video_url}' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
 		<span class='details__heading'>{$this->title}</span>
