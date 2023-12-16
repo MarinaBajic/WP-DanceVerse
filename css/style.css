@@ -288,10 +288,6 @@ body {
   margin-top: 5px;
 }
 
-.hidden {
-  display: none;
-}
-
 .add-dance {
   padding-block: 100px;
   background-color: #002828;
@@ -369,8 +365,8 @@ body {
 }
 
 .details {
-  height: calc(100dvh - 120px);
-  padding-top: 200px;
+  min-height: calc(100dvh - 120px);
+  padding-top: 180px;
   background-image: url("../assets/polygon-scatter-haikei.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -386,6 +382,7 @@ body {
        column-gap: 40px;
   align-items: center;
   margin-inline: auto;
+  padding-bottom: 40px;
 }
 
 .details__video {
@@ -427,6 +424,17 @@ body {
 }
 .details__btn:hover {
   background-color: #f6f6f6;
+}
+
+.favorites {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: center;
+}
+
+.favorites__star {
+  width: 24px;
 }
 
 .login {
@@ -487,4 +495,8 @@ body {
 .footer__socials {
   display: flex;
   gap: 10px;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

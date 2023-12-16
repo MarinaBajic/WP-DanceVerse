@@ -1,7 +1,6 @@
-
 .details {
-	height: calc(100dvh - 120px);
-	padding-top: 200px;
+	min-height: calc(100dvh - 120px);
+	padding-top: 180px;
 	background-image: url("../assets/polygon-scatter-haikei.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -16,6 +15,7 @@
 	column-gap: 40px;
 	align-items: center;
 	margin-inline: auto;
+	padding-bottom: 40px;
 }
 
 .details__video {
@@ -58,4 +58,15 @@
 	&:hover {
 		background-color: $light;
 	}
+}
+
+.favorites {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-self: center;
+}
+
+.favorites__star {
+	width: 24px;
 }
