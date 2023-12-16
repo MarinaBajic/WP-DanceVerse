@@ -3,11 +3,10 @@
 require_once("classes/Utils.php");
 $utils = new Utils();
 $message_insert_dance = $utils->insertDance();
-$add_form_class = " hidden";
-if (Utils::isUserLoggedIn() && isset($_GET["add-dance"])) {
-	$add_form_class = "";
-}
+
+$add_form_class = Utils::isUserLoggedIn() && isset($_GET["add-dance"]) ? "" : "hidden";
 $search_form_class = Utils::toggleComponentVisibility("search");
+
 Utils::logout();
 
 ?>

@@ -6,9 +6,6 @@ $utils->deleteDance();
 
 $dance = isset($_GET["id"]) ? $utils->findDanceById($_GET["id"]) : null;
 
-$favorite_dance_class = Utils::isUserLoggedIn() ? "" : "hidden";
-$dance_delete_class = Utils::isUserLoggedIn() ? "" : "hidden";
-
 $is_favorite = isset($_COOKIE["favorites"][$dance->getId()]);
 $add_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "yes";
 $remove_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "no";
@@ -26,27 +23,6 @@ if ($remove_favorite) {
 	$remove_favorite_class = "hidden";
 	$favorite_message = " -  Add to favorites";
 }
-
-
-// if (isset($_COOKIE["favorites"][$dance->getId()]) || isset($_GET["favorite"])) {
-// 	$favorite_no_class = "hidden";
-// 	$favorite_yes_class = "";
-// 	$favorite_message = " -  Favorite !";
-// 	if (isset($_GET["favorite"]) && $_GET["favorite"] == "no") {
-// 		$favorite_no_class = "";
-// 		$favorite_yes_class = "hidden";
-// 		$favorite_message = " -  Add to favorites";
-// 		setcookie("favorites[{$dance->getId()}]", $dance->getId(), time() - 0, "/");
-// 	}
-// 	else if (isset($_GET["favorite"])) {
-// 		setcookie("favorites[{$dance->getId()}]", $dance->getId(), 0, "/");
-// 	}
-// }
-// else {
-// 	$favorite_no_class = "";
-// 	$favorite_yes_class = "hidden";
-// 	$favorite_message = " -  Add to favorites";
-// }
 
 Utils::logout();
 
@@ -71,7 +47,7 @@ Utils::logout();
 			<div class="wrapper">
 				<div class="details__content">
 					<?php echo $dance->getHtmlDetails(); ?>
-					<div class="details__favorites favorites <?php echo $favorite_dance_class; ?>">
+					<div class="details__favorites favorites <?php echo $user_logged_in; ?>">
 						<a class="<?php echo $add_favorite_class; ?>" href="?id=<?php echo $dance->getId(); ?>&favorite=yes">
 							<img class="favorites__star" src="assets/star-outline.svg" alt="star">
 						</a>
@@ -80,7 +56,7 @@ Utils::logout();
 						</a>
 						<span class="favorites__text"><?php echo $favorite_message; ?></span>
 					</div>
-					<form method="post" class="<?php echo $dance_delete_class; ?>">
+					<form method="post" class="<?php echo $user_logged_in; ?>">
 						<input type="hidden" name="dance-id" value="<?php echo $dance->getId(); ?>">
 						<input class="details__btn" type="submit" name="delete" value="Delete choreography">
 					</form>
