@@ -141,14 +141,7 @@ body {
   color: #9B9BCF;
 }
 
-.log {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.log__btn {
+.header__btn {
   color: #9B9BCF;
   text-decoration: none;
   background-color: transparent;
@@ -159,23 +152,10 @@ body {
   border-radius: 50px;
   padding: 7px 14px;
 }
-.log__btn:hover {
+.header__btn:hover {
   background-color: #9B9BCF;
   color: #111;
   cursor: pointer;
-}
-
-.profile-photo {
-  height: 30px;
-  width: 30px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .hero {
@@ -312,9 +292,70 @@ body {
   margin-top: 5px;
 }
 
-.add-dance {
+.gallery {
   padding-block: 100px;
   background-color: #002828;
+}
+
+.gallery__form {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-inline: auto;
+  font-family: Raleway, sans-serif;
+}
+
+.gallery__label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.gallery__input {
+  width: 250px;
+  background-color: #003c3c;
+  padding: 8px 16px;
+  border: 2px solid #c3c3c3;
+  border-radius: 10px;
+}
+
+.gallery__btn {
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #9B9BCF;
+}
+.gallery__btn:hover {
+  background-color: #f6f6f6;
+}
+
+.gallery__print {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery__photo {
+  height: 150px;
+  width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+.gallery__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.add-dance {
+  padding-block: 100px;
 }
 
 .add-dance__content {
@@ -355,7 +396,7 @@ body {
 }
 
 .form__input {
-  background-color: #003c3c;
+  background-color: #002828;
   color: #f6f6f6;
   border: 2px solid #c3c3c3;
   border-radius: 5px;
@@ -499,7 +540,7 @@ body {
 
 .favorites {
   min-height: calc(100dvh - 120px);
-  padding-block: 140px;
+  padding-block: 140px 100px;
 }
 
 .photo__form {

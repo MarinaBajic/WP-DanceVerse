@@ -17,13 +17,10 @@ $log_in_btn = Utils::isUserLoggedIn() ? "hidden" : "";
 				<a href="favorites.php" class="nav__item <?php echo $user_logged_in; ?>">FAVORITES</a>
 				<a href=".?search#search" class="nav__item">SEARCH</a>
 			</nav>
-			<div class="header__log log">
-				<?php Utils::printProfilePhoto() ?>
-				<a href="login.php" class="log__btn <?php echo $log_in_btn; ?>">Log in</a>
-				<form method="post" class="<?php echo $user_logged_in; ?>">
-					<input type="submit" value="Log out" class="log__btn" name="logout">
-				</form>
-			</div>
+			<a href="login.php" class="header__btn <?php echo $log_in_btn; ?>">Log in</a>
+			<form method="post" class="<?php echo $user_logged_in; ?>">
+				<input type="submit" value="Log out" class="header__btn" name="logout">
+			</form>
 		</div>
 	</div>
 </header>

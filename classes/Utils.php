@@ -34,16 +34,18 @@ class Utils
 		return null;
 	}
 
-	public static function printProfilePhoto()
+	public static function printPhotos()
 	{
-		if (isset($_FILES["photo"])) {
-			echo "<div class='profile-photo'>";
-			echo "<img src='assets/images/{$_FILES["photo"]["name"]}' alt='Profile photo'>";
+		$folder = "assets/images/";
+		$images = glob($folder . "*.{jpg,jpeg}", GLOB_BRACE);
+		foreach ($images as $photo) {
+			echo "<div class='gallery__photo'>";
+			echo "<img src='$photo' alt='$photo'>";
 			echo "</div>";
 		}
 	}
 
-	public static function checkProfilePhoto()
+	public static function checkPhoto()
 	{
 		$message = "";
 		if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == UPLOAD_ERR_OK) {

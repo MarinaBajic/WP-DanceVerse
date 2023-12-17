@@ -9,7 +9,6 @@ if (!isset($_SESSION["username"])) {
 require_once("classes/Utils.php");
 $utils = new Utils();
 
-$message_photo = Utils::checkProfilePhoto();
 Utils::logout();
 
 ?>
@@ -45,15 +44,6 @@ Utils::logout();
 						}
 						?>
 					</div>
-					<form class="photo__form form" method="post" enctype="multipart/form-data">
-						<input type="hidden" name="MAX_FILE_SIZE" value="500000">
-						<div class="form__item">
-							<label for="photo" class="form__label">Profile photo</label>
-							<input type="file" name="photo" id="photo" class="form__input">
-						</div>
-						<input type="submit" value="Add photo" name="add-photo" class="form__btn">
-						<span class="message"><?php echo $message_photo ?></span>
-					</form>
 				</div>
 			</div>
 		</section>

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require_once("classes/Utils.php");
@@ -8,6 +7,8 @@ $message_insert_dance = $utils->insertDance();
 
 $add_form_class = Utils::isUserLoggedIn() && isset($_GET["add-dance"]) ? "" : "hidden";
 $search_form_class = Utils::toggleComponentVisibility("search");
+
+$message_photo = Utils::checkPhoto();
 
 Utils::logout();
 
@@ -59,7 +60,26 @@ Utils::logout();
 				</div>
 			</div>
 		</section>
-		<section id="add-dance" class="add-dance <?php echo $add_form_class; ?>">
+		<section id="gallery" class="gallery <?php echo $user_logged_in ?>">
+			<div class="wrapper">
+				<div class="gallery__content">
+					<h2 class="heading heading--h2">Shared gallery</h2>
+					<form class="gallery__form" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="MAX_FILE_SIZE" value="500000">
+						<label for="photo" class="gallery__label">Your photo:</label>
+						<input type="file" name="photo" id="photo" class="gallery__input">
+						<input type="submit" value="Add photo" name="add-photo" class="gallery__btn">
+					</form>
+					<span class="message"><?php echo $message_photo ?></span>
+					<div class="gallery__print">
+						<?php
+						Utils::printPhotos();
+						?>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="add-dance" class="section-bg add-dance <?php echo $add_form_class; ?>">
 			<div class="wrapper">
 				<div class="add-dance__content">
 					<h2 class="heading heading--h2">Add new dance</h2>
