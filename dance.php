@@ -1,12 +1,14 @@
 <?php
 
+session_start();
+
 require_once("classes/Utils.php");
 $utils = new Utils();
 $utils->deleteDance();
 
 $dance = isset($_GET["id"]) ? $utils->findDanceById($_GET["id"]) : null;
 
-$is_favorite = isset($_COOKIE["favorites"][$dance->getId()]);
+$is_favorite = isset($_SESSION["favorites"][$dance->getId()]);
 $add_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "yes";
 $remove_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "no";
 
@@ -15,7 +17,7 @@ $remove_favorite_class = $add_favorite || $is_favorite ? "" : "hidden";
 $favorite_message = $add_favorite || $is_favorite ? " - Favorite !" : " - Add to favorites";
 
 if ($add_favorite) {
-	setcookie("favorites[{$dance->getId()}]", $dance->getId(), 0, "/");
+	setcookie("favorites[{$dance->getId()}]", $dance->getId(), time() + (86400 * 356), "/");
 }
 if ($remove_favorite) {
 	setcookie("favorites[{$dance->getId()}]", $dance->getId(), time() - 0, "/");
@@ -43,18 +45,18 @@ Utils::logout();
 	<?php include("header.php"); ?>
 
 	<main class="main">
-		<section class="details">
+		<section class="section-bg details">
 			<div class="wrapper">
 				<div class="details__content">
 					<?php echo $dance->getHtmlDetails(); ?>
-					<div class="details__favorites favorites <?php echo $user_logged_in; ?>">
+					<div class="details__favorite favorite <?php echo $user_logged_in; ?>">
 						<a class="<?php echo $add_favorite_class; ?>" href="?id=<?php echo $dance->getId(); ?>&favorite=yes">
-							<img class="favorites__star" src="assets/star-outline.svg" alt="star">
+							<img class="favorite__star" src="assets/star-outline.svg" alt="star">
 						</a>
 						<a class="<?php echo $remove_favorite_class; ?>" href="?id=<?php echo $dance->getId(); ?>&favorite=no">
-							<img class="favorites__star" src="assets/star-fill.svg" alt="star">
+							<img class="favorite__star" src="assets/star-fill.svg" alt="star">
 						</a>
-						<span class="favorites__text"><?php echo $favorite_message; ?></span>
+						<span class="favorite__text"><?php echo $favorite_message; ?></span>
 					</div>
 					<form method="post" class="<?php echo $user_logged_in; ?>">
 						<input type="hidden" name="dance-id" value="<?php echo $dance->getId(); ?>">

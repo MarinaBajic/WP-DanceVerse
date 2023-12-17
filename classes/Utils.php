@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once("database/Database.php");
 
 class Utils
@@ -71,7 +69,7 @@ class Utils
 			$message = "Please enter difficulty.";
 		} else if (empty($_POST["style"])) {
 			$message = "Please select a dance style.";
-		} else if (empty($_POST["video_url"])) {
+		} else if (empty($_POST["video-url"])) {
 			$message = "Please enter video url.";
 		} else if (empty($_POST["choreographer"])) {
 			$message = "Please enter a choreographer.";
@@ -162,9 +160,8 @@ class Utils
 
 		foreach ($this->db->getAllUsers() as $user) {
 			if ($username == $user->getUsername() && password_verify($password, $user->getPassword())) {
-				$_SESSION["username"] = $username;
+				Utils::loginSession($username);
 				$message = "Login successful!";
-				header("Location: index.php");
 				return $message;
 			}
 		}
@@ -172,9 +169,16 @@ class Utils
 		return $message;
 	}
 
+	public static function loginSession($username) {
+		session_start();
+		$_SESSION["username"] = $username;
+		header("Location: index.php");
+	}
+
 	public static function logout()
 	{
 		if (isset($_POST["logout"])) {
+			setcookie("PHPSESSID", "", time() - 0, "/");
 			session_destroy();
 			header("Location: index.php");
 		}
@@ -186,5 +190,13 @@ class Utils
 			return false;
 		}
 		return true;
+	}
+
+	public static function getFavoriteDances()
+	{
+		if (empty($_COOKIE["favorites"])) {
+			return null;
+		}
+		return $_COOKIE["favorites"];
 	}
 }

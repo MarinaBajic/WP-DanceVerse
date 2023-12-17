@@ -18,7 +18,7 @@ body {
 	font-family: Raleway, sans-serif;
 	color: $accent;
 	text-align: center;
-	
+
 	&.heading--h1 {
 		font-size: 75px;
 		color: $light;
@@ -28,6 +28,12 @@ body {
 		font-size: 30px;
 		margin-bottom: 40px;
 	}
+}
+
+.section-bg {
+	background-image: url('../assets/polygon-scatter-haikei.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .message {

@@ -1,9 +1,6 @@
 .details {
 	min-height: calc(100dvh - 120px);
-	padding-top: 180px;
-	background-image: url("../assets/polygon-scatter-haikei.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
+	padding-block: 180px 100px;
 }
 
 .details__content {
@@ -60,13 +57,13 @@
 	}
 }
 
-.favorites {
+.favorite {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	justify-self: center;
 }
 
-.favorites__star {
+.favorite__star {
 	width: 24px;
 }

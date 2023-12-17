@@ -23,7 +23,7 @@ $register_class = Utils::toggleComponentVisibility("register");
 	<?php include("header.php"); ?>
 
 	<main class="main">
-		<section class="login">
+		<section class="section-bg login">
 			<div class="wrapper">
 				<div class="login__content">
 					<h2 class="heading heading--h2">Login</h2>

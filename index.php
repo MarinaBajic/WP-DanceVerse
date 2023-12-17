@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once("classes/Utils.php");
 $utils = new Utils();
 $message_insert_dance = $utils->insertDance();
@@ -34,7 +36,7 @@ Utils::logout();
 				<a class="banner__btn" href=".#dances">See choreographies</a>
 			</div>
 		</section>
-		<section id="dances" class="dances">
+		<section id="dances" class="section-bg dances">
 			<div class="wrapper">
 				<div class="dances__content">
 					<form id="search" class="dances__search <?php echo $search_form_class; ?>" method="get">

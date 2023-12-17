@@ -90,6 +90,12 @@ body {
   margin-bottom: 40px;
 }
 
+.section-bg {
+  background-image: url("../assets/polygon-scatter-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .message {
   font-size: 15px;
   color: red;
@@ -202,9 +208,6 @@ body {
 
 .dances {
   padding-block: 100px;
-  background-image: url("../assets/polygon-scatter-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .search {
@@ -367,10 +370,7 @@ body {
 
 .details {
   min-height: calc(100dvh - 120px);
-  padding-top: 180px;
-  background-image: url("../assets/polygon-scatter-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-block: 180px 100px;
 }
 
 .details__content {
@@ -427,23 +427,20 @@ body {
   background-color: #f6f6f6;
 }
 
-.favorites {
+.favorite {
   display: flex;
   align-items: center;
   gap: 10px;
   justify-self: center;
 }
 
-.favorites__star {
+.favorite__star {
   width: 24px;
 }
 
 .login {
   min-height: calc(100dvh - 120px);
   padding-block: 180px 100px;
-  background-image: url("../assets/polygon-scatter-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .login__content {
@@ -478,6 +475,11 @@ body {
 .register {
   background-color: #002828;
   padding-block: 80px;
+}
+
+.favorites {
+  min-height: calc(100dvh - 120px);
+  padding-block: 140px;
 }
 
 .footer {
