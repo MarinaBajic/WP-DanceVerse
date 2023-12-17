@@ -38,7 +38,7 @@ class Utils
 	{
 		if (isset($_FILES["photo"])) {
 			echo "<div class='profile-photo'>";
-			echo "<img src='assets/{$_FILES["photo"]["name"]}' alt='Profile photo'>";
+			echo "<img src='assets/images/{$_FILES["photo"]["name"]}' alt='Profile photo'>";
 			echo "</div>";
 		}
 	}
@@ -49,7 +49,7 @@ class Utils
 		if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == UPLOAD_ERR_OK) {
 			if ($_FILES["photo"]["type"] != "image/jpeg") {
 				$message = "JPEG photos only, thanks!";
-			} else if (!move_uploaded_file($_FILES["photo"]["tmp_name"], "assets/" . basename($_FILES["photo"]["name"]))) {
+			} else if (!move_uploaded_file($_FILES["photo"]["tmp_name"], "assets/images/" . basename($_FILES["photo"]["name"]))) {
 				$message = "Sorry, there was a problem uploading that photo. " . $_FILES["photo"]["error"];
 			}
 		} else if (isset($_FILES["photo"])) {

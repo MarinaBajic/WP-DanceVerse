@@ -8,7 +8,7 @@ $utils->deleteDance();
 
 $dance = isset($_GET["id"]) ? $utils->findDanceById($_GET["id"]) : null;
 
-$is_favorite = isset($_SESSION["favorites"][$dance->getId()]);
+$is_favorite = isset($_COOKIE["favorites"][$_SESSION["username"]][$dance->getId()]);
 $add_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "yes";
 $remove_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "no";
 
@@ -60,6 +60,7 @@ Utils::logout();
 							<img class="favorite__star" src="assets/star-fill.svg" alt="star">
 						</a>
 						<span class="favorite__text"><?php echo $favorite_message; ?></span>
+
 					</div>
 					<form method="post" class="<?php echo $user_logged_in; ?>">
 						<input type="hidden" name="dance-id" value="<?php echo $dance->getId(); ?>">
