@@ -17,10 +17,13 @@ $remove_favorite_class = $add_favorite || $is_favorite ? "" : "hidden";
 $favorite_message = $add_favorite || $is_favorite ? " - Favorite !" : " - Add to favorites";
 
 if ($add_favorite) {
-	setcookie("favorites[{$dance->getId()}]", $dance->getId(), time() + (86400 * 356), "/");
+	if (!isset($_COOKIE[$_SESSION["username"]])) {
+		$_COOKIE[$_SESSION["username"]] = array();
+	}
+	setcookie("favorites[{$_SESSION["username"]}][{$dance->getId()}]", $dance->getId(), time() + (86400 * 356), "/");
 }
 if ($remove_favorite) {
-	setcookie("favorites[{$dance->getId()}]", $dance->getId(), time() - 0, "/");
+	setcookie("favorites[{$_SESSION["username"]}][{$dance->getId()}]", $dance->getId(), time() - 0, "/");
 	$add_favorite_class = "";
 	$remove_favorite_class = "hidden";
 	$favorite_message = " -  Add to favorites";

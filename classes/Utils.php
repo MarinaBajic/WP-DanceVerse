@@ -231,9 +231,9 @@ class Utils
 
 	public static function getFavoriteDances()
 	{
-		if (empty($_COOKIE["favorites"])) {
+		if (empty($_COOKIE["favorites"][$_SESSION["username"]])) {
 			return null;
 		}
-		return $_COOKIE["favorites"];
+		return $_COOKIE["favorites"][$_SESSION["username"]];
 	}
 }
