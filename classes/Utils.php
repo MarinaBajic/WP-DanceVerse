@@ -34,6 +34,42 @@ class Utils
 		return null;
 	}
 
+	public static function printProfilePhoto()
+	{
+		if (isset($_FILES["photo"])) {
+			echo "<div class='profile-photo'>";
+			echo "<img src='assets/{$_FILES["photo"]["name"]}' alt='Profile photo'>";
+			echo "</div>";
+		}
+	}
+
+	public static function checkProfilePhoto()
+	{
+		$message = "";
+		if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == UPLOAD_ERR_OK) {
+			if ($_FILES["photo"]["type"] != "image/jpeg") {
+				$message = "JPEG photos only, thanks!";
+			} else if (!move_uploaded_file($_FILES["photo"]["tmp_name"], "assets/" . basename($_FILES["photo"]["name"]))) {
+				$message = "Sorry, there was a problem uploading that photo. " . $_FILES["photo"]["error"];
+			}
+		} else if (isset($_FILES["photo"])) {
+			switch ($_FILES["photo"]["error"]) {
+				case UPLOAD_ERR_INI_SIZE:
+					$message = "The photo is larger than the server allows.";
+					break;
+				case UPLOAD_ERR_FORM_SIZE:
+					$message = "The photo is larger than the script allows.";
+					break;
+				case UPLOAD_ERR_NO_FILE:
+					$message = "No file was uploaded. Make sure you choose a file to upload.";
+					break;
+				default:
+					$message = "Please contact your server administrator for help.";
+			}
+		}
+		return $message;
+	}
+
 	public function insertUser()
 	{
 		$message = "";
@@ -169,7 +205,8 @@ class Utils
 		return $message;
 	}
 
-	public static function loginSession($username) {
+	public static function loginSession($username)
+	{
 		session_start();
 		$_SESSION["username"] = $username;
 		header("Location: index.php");

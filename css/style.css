@@ -141,6 +141,13 @@ body {
   color: #9B9BCF;
 }
 
+.log {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
 .log__btn {
   color: #9B9BCF;
   text-decoration: none;
@@ -156,6 +163,19 @@ body {
   background-color: #9B9BCF;
   color: #111;
   cursor: pointer;
+}
+
+.profile-photo {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .hero {
@@ -480,6 +500,14 @@ body {
 .favorites {
   min-height: calc(100dvh - 120px);
   padding-block: 140px;
+}
+
+.photo__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 60px;
 }
 
 .footer {

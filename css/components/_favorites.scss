@@ -3,3 +3,11 @@
 	min-height: calc(100dvh - 120px);
 	padding-block: 140px;
 }
+
+.photo__form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	margin-top: 60px;
+}

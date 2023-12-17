@@ -16,6 +16,7 @@ $register_class = Utils::toggleComponentVisibility("register");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>DanceVerse | Login</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -47,7 +48,7 @@ $register_class = Utils::toggleComponentVisibility("register");
 			<div class="wrapper">
 				<div class="register__content">
 					<h2 class="heading heading--h2">Register</h2>
-					<form class="login__form form" method="post">
+					<form class="login__form form" method="post"">
 						<div class="form__item">
 							<label for="username" class="form__label">Username</label>
 							<input type="text" id="username" class="form__input" name="username">
