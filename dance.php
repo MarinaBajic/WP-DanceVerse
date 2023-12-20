@@ -8,7 +8,10 @@ $utils->deleteDance();
 
 $dance = isset($_GET["id"]) ? $utils->findDanceById($_GET["id"]) : null;
 
-$is_favorite = isset($_COOKIE["favorites"][$_SESSION["username"]][$dance->getId()]);
+$is_favorite = false;
+if (isset($_SESSION["username"])) {
+	$is_favorite = isset($_COOKIE["favorites"][$_SESSION["username"]][$dance->getId()]);
+}
 $add_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "yes";
 $remove_favorite = isset($_GET["favorite"]) && $_GET["favorite"] == "no";
 
