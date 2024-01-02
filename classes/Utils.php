@@ -136,12 +136,19 @@ class Utils
 			$dance_id = htmlspecialchars($_POST["dance-id"]);
 			if ($this->db->deleteDance($dance_id)) {
 				$message .= "Delete successful :D";
+				$this->removeFromFavorites($dance_id);
 			} else {
 				$message .= "Delete unsuccessful :(";
 			}
 			header('Location: index.php');
 		}
 		return $message;
+	}
+
+	public function removeFromFavorites($dance_id) {
+		if (isset($_COOKIE["favorites"][$_SESSION["username"]][$dance_id])) {
+			setcookie("favorites[{$_SESSION["username"]}][$dance_id]", $dance_id, time() - 0, "/");
+		}
 	}
 
 	public function printAllDances()
