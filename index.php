@@ -70,7 +70,7 @@ Utils::logout();
 						<input type="file" name="photo" id="photo" class="gallery__input">
 						<input type="submit" value="Add photo" name="add-photo" class="gallery__btn">
 					</form>
-					<span class="message"><?php echo $message_photo ?></span>
+					<span class="gallery__message message"><?php echo $message_photo ?></span>
 					<div class="gallery__print">
 						<?php
 						Utils::printPhotos();

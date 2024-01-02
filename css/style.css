@@ -354,6 +354,12 @@ body {
      object-fit: cover;
 }
 
+.gallery__message {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
 .add-dance {
   padding-block: 100px;
 }
