@@ -8,7 +8,7 @@ DanceVerse is a web application that showcases various dance choreographies.
 - Display all dance choreographies
 - Search functionality for browsing dance styles
 - Shared gallery for users to upload performance images
-- Detailed view for each choreography with options for logged-in users (favorite and delete)
+- Detailed view for each choreography with options for logged-in users
 - Ability to mark choreographies as favorites for logged-in users
 - Submitting new choreographies for logged-in users
 - Deleting existing choreographies for logged-in users
