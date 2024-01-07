@@ -145,10 +145,25 @@ class Utils
 		return $message;
 	}
 
-	public function removeFromFavorites($dance_id) {
-		if (isset($_COOKIE["favorites"][$_SESSION["username"]][$dance_id])) {
-			setcookie("favorites[{$_SESSION["username"]}][$dance_id]", $dance_id, time() - 0, "/");
+	private function removeFromFavorites($dance_id)
+	{
+		foreach ($this->getAllUsernames() as $username) {
+			if (
+				isset($_COOKIE["favorites"][$username]) &&
+				isset($_COOKIE["favorites"][$username][$dance_id])
+			) {
+				setcookie("favorites[$username][$dance_id]", $dance_id, time() - 0, "/");
+			}
 		}
+	}
+
+	private function getAllUsernames()
+	{
+		$usernames = array();
+		foreach ($this->db->getAllUsers() as $user) {
+			$usernames[] = $user->getUsername();
+		}
+		return $usernames;
 	}
 
 	public function printAllDances()

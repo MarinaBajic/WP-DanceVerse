@@ -327,6 +327,7 @@ body {
   border-radius: 10px;
   border: 0;
   background-color: #9B9BCF;
+  cursor: pointer;
 }
 .gallery__btn:hover {
   background-color: #f6f6f6;
