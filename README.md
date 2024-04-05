@@ -22,7 +22,6 @@ It is a dynamic web platform built with PHP and MySQL, designed to be responsive
 - PHP
 - MySQL (phpmyadmin)
 
-## Acknowledgements
+## Credits
 
-This project was created as part of Web programming class for PMF. Credits to me :)
-
+- Developed by [Marina Bajić](https://github.com/MarinaBajic)
