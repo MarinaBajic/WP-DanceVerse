@@ -2,6 +2,8 @@
 
 DanceVerse is a web application that showcases various dance choreographies.
 
+It is a dynamic web platform built with PHP and MySQL, designed to be responsive and user-friendly, providing a seamless experience for dancers of all levels to explore, create, and connect.
+
 ## Features
 
 - User authentication and registration
@@ -13,14 +15,6 @@ DanceVerse is a web application that showcases various dance choreographies.
 - Submitting new choreographies for logged-in users
 - Deleting existing choreographies for logged-in users
 - Favorite choreographies for logged-in users
-
-## Usage
-
-1. Clone the repository.
-2. Set up the necessary environment (e.g. server, database).
-3. Run the application.
-4. Navigate through the different sections using the provided links in the menu.
-5. Register or log in to access additional features like marking favorite choreographies or adding new ones.
 
 ## Technologies Used
 
