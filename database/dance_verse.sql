@@ -44,7 +44,7 @@ CREATE TABLE `dance` (
 
 INSERT INTO `dance` (`id_dance`, `title`, `difficulty_level`, `dance_style`, `video_url`, `choreographer`, `duration`, `music`) VALUES
 (19, 'Gyuri Choreography', 3, 'Hip Hop', 'https://www.youtube.com/embed/xTxtLPhO2F8?si=CqKsBA0LylwJaP9J', 'MOVE Dance Studio', '00:00:42', 'Doja Cat - Woman'),
-(20, 'Sad Girl love money', 5, 'Other', 'https://www.youtube.com/embed/9l1RAT3Vh28?si=uSamx6D7iA1AaFK5', 'Orange', '00:00:39', 'SAD GIRLZ LUV MONEY (Remix) Amaarae, Kali Uchis'),
+(20, 'Juana Choreography', 5, 'Other', 'https://www.youtube.com/embed/YXNlxXMMF44', 'Moshiee', '00:01:10', 'Unholy - Sam Smith'),
 (32, 'Danni Heverin Jazz Class', 7, 'Other', 'https://www.youtube.com/embed/zh0bghmBLug?si=aff-st-RIToI8xoq', 'Danni Heverin', '00:01:08', '“Maneater” - Nelly Furtado');
 
 -- --------------------------------------------------------
